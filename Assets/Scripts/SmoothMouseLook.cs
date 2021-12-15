@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 [AddComponentMenu("Camera/Smooth Mouse Look ")]
 public class SmoothMouseLook : MonoBehaviour
@@ -20,6 +21,7 @@ public class SmoothMouseLook : MonoBehaviour
         targetDirection = transform.rotation.eulerAngles;
     }
 
+    [Obsolete]
     void Update()
     {
         // Ensure the cursor is always locked when set
