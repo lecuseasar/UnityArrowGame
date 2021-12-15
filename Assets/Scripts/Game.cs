@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Game : MonoBehaviour
 {
     public float TotalScore;
+    public TMP_Text scoreText;
     private void Start()
     {
         
@@ -17,6 +19,6 @@ public class Game : MonoBehaviour
     public void IncreaseScore(float score)
     {
         TotalScore += score;
-        Debug.Log(TotalScore);
+        scoreText.text = $"Score : " + TotalScore;
     }
 }

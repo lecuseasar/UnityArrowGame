@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
+    private void Start()
+    {
+        Invoke($"{nameof(arrowDestroy)}", 5);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         StartCoroutine(waiter());
         StopCoroutine(waiter());
     }
-
 
     IEnumerator waiter()
     {
@@ -24,5 +28,11 @@ public class Arrow : MonoBehaviour
         }
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = true;
 
+        //Invoke($"{nameof(arrowDestroy)}", 1);
+    }
+
+    void arrowDestroy()
+    {
+        Destroy(gameObject);
     }
 }
