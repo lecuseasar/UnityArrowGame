@@ -4,21 +4,9 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        StartCoroutine(waiter());        
+        StartCoroutine(waiter());
         StopCoroutine(waiter());
     }
 
@@ -29,12 +17,12 @@ public class Arrow : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = true;
         GameObject[] cameras = GameObject.FindGameObjectsWithTag("ArrowCamera");
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < cameras.Length; i++)
         {
             cameras[i].GetComponent<Camera>().enabled = false;
         }
         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = true;
-        
+
     }
 }

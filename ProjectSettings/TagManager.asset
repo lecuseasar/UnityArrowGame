@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Target
   - ArrowCamera
+  - Target_03
+  - Target_Center_03
+  - Target_01
+  - Arrow
   layers:
   - Default
   - TransparentFX
