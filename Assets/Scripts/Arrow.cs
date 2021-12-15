@@ -18,10 +18,23 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if (collision.collider.tag == "Target"){}
+        StartCoroutine(waiter());        
+        StopCoroutine(waiter());
+    }
+
+
+    IEnumerator waiter()
+    {
         GetComponent<Rigidbody>().useGravity = false;
         GetComponent<Rigidbody>().isKinematic = true;
-        Debug.Log("Carptim");
+        GameObject[] cameras = GameObject.FindGameObjectsWithTag("ArrowCamera");
 
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].GetComponent<Camera>().enabled = false;
+        }
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = true;
+        
     }
 }
