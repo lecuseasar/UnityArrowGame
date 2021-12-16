@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bow : MonoBehaviour
 {
     public GameObject arrowGameOject;
+    public Slider sliderObject;
 
     public float stretch;
     public float stretchSpeed = 5;
@@ -23,12 +25,15 @@ public class Bow : MonoBehaviour
         if (Input.GetMouseButton(0) && stretch < stretchMax) // left click
         {
             stretch += stretchSpeed * Time.deltaTime;
+            sliderObject.value = stretch;
+
         }
 
         if (Input.GetMouseButtonUp(0))
         {
             ShootArrow(stretch);
             stretch = 0;
+            sliderObject.value = 0;
         }
     }
     void ShootArrow(float arrowSpeed)
