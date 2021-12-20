@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class Bow : MonoBehaviour
 {
     public List<GameObject> arrowGameOjects;
-    public Slider sliderObject;
     public AudioSource stretchSound;
+
+    public Slider sliderObject;
 
     public float stretch;
     public float stretchSpeed = 5;
