@@ -19,6 +19,7 @@ public class Game : MonoBehaviour
     public void IncreaseScore(float score)
     {
         TotalScore += score;
+        // TODO: BURADA CARPISMA OLDUGU AN CARPMSA SESINI OYNAT
         scoreText.text = $"Score : " + TotalScore;
     }
 }

@@ -9,6 +9,7 @@ public class SmoothMouseLook : MonoBehaviour
     Vector2 _mouseAbsolute;
     Vector2 _smoothMouse;
 
+    // TODO: BURADA PLAYERiDA KAMERAYA GORE HAREKET ETTIR
     public GameObject playerGameObject;
 
     public Vector2 clampInDegrees = new Vector2(360, 180);

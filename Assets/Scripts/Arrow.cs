@@ -26,8 +26,8 @@ public class Arrow : MonoBehaviour
         {
             cameras[i].GetComponent<Camera>().enabled = false;
         }
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = true;
 
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>().enabled = true;
         //Invoke($"{nameof(arrowDestroy)}", 1);
     }
 
