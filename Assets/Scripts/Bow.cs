@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class Bow : MonoBehaviour
 {
-    public List<GameObject> arrowGameOjects;
+    public List<GameObject> arrowGameOjects = new List<GameObject>();
     public AudioSource stretchSound;
 
     public Slider sliderObject;
@@ -53,7 +52,7 @@ public class Bow : MonoBehaviour
     void ShootArrow(GameObject gameObject, float arrowSpeed)
     {
         Camera camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        GameObject arrow = Instantiate(gameObject, camera.transform.position, camera.transform.rotation);
+        GameObject arrow = Instantiate(gameObject, camera.transform.position, camera.transform.rotation) as GameObject;
         arrow.transform.Rotate(0, 90, 0);
         arrow.GetComponent<Rigidbody>().velocity = camera.transform.forward * arrowSpeed;
     }
